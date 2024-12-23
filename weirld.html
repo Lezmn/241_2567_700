@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*css*/
+        /*ใช้แต่ง (id class) ใน html*/
+        @font-face{
+            font-family: 'Kanit';
+            src: url('./Kanit/Kanit-Regular.ttf');
+        }
+        body{ /*tag*/
+            font-family: 'Kanit', sans-serif;
+        }
+      
+        #register{ /*id*/
+            font-size: 24px;
+            color:red;
+            font-weight: 800;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 10px;
+            background-color: bisque;
+            padding-left: 20px;
+            border: 2px solid black;
+        }
+        .header-form{ /*class*/
+            font-weight: 800;
+        }
+        .gender{ /*class*/
+            display: flex;
+            flex-direction: row;
+            
+        }
+        /*top right bottom left*/
+        .relative{
+            position: relative;
+            left:20px;
+        }
+        .absolute{
+            position: absolute;
+            bottom: 0px;
+            top: 0px;
+        }
+        .fixed{
+            position: fixed;
+            top:0px;
+            right:0px;
+        }
+        .sticky{
+            position: sticky;
+            top:50px;
+        }
+        .container{
+            height: 1800px;
+        }
+        .image{ /*class*/
+            background-image:url(https://fastly.picsum.photos/id/1084/536/354.jpg?grayscale&hmac=Ux7nzg19e1q35mlUVZjhCLxqkR30cC-CarVg-nlIf60);
+            height: 200px;
+            width: 200px;
+            background-size: contain;
+            background-position: top right;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <!--form-->
+    <div class="right">
+        suriya
+    </div>
+    <div class="left">
+        test
+    </div>    
+
+    <div id="register">Register Form</div>
+    <span class="header-form">ชื่อ</span>
+    <input class="form" type = "text">
+    <span class="header-form">นามสกุล</span>
+    <input class="form" type = "text"> <br>
+    อายุ 
+    <input class="form" type = "number" min="0" max="100">
+        <div class="gender">
+            เพศ
+            <div>
+                <input name="gender" type ="radio">ชาย
+            </div>
+            <div>
+                <input name="gender" type ="radio">หญิง
+            </div>
+            <div>
+                <input name="gender" type ="radio">ไม่ระบุ
+            </div>
+    </div>
+    <div>
+        งานอดิเรก
+        <div>
+            <input name="hobby" type="checkbox">ฟังเพลง
+        </div>
+        <div>
+            <input name="hobby" type="checkbox">ดูหนัง
+        </div>
+    </div>
+    <div>
+        ที่อยู่ <textarea></textarea>
+    </div>
+    <div>
+        <button>ส่งข้อมูล</button>
+        <input type="submit" value="ส่งข้อมูล">
+    </div>
+</body>
+</html>
