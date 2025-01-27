@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---mouse--->
+    <div
+    onmouseover="overitem()"
+    onmouseup="upitem()"
+    onmousedown="downitem()"
+    >click here</div>
+    <!---ปุ่ม--->
+    <button onclick="userClick()">Click me</button>
+    <!---ชื่อ--->
+    ชื่อ <input type="text" name="firstname" onkeyup="changeFirstName()""> <!--- มี onkeyup onkeydown--->
+    <!--- เลือกเพศ  --->
+    <input type="radio" name="gender" value="ชาย" onchange="ChangeGender()"> ชาย 
+    <input type="radio" name="gender" value="หญิง" onchange="ChangeGender()"> หญิง
+    <input type="radio" name="gender" value="อื่นๆ" onchange="ChangeGender()"> อื่นๆ
+    <!---ข้อความ--->
+    <div id="hello">hello<span style="display:none;">ee</span> </div>
+
+    <div>
+        <h2>สิ่งที่สนใจ</h2>
+        <div id="content">
+
+        </div>
+    </div>
+    <input type="checkbox" name="interest" value="กีฬา"> กีฬา
+    <input type="checkbox" name="interest" value="ดนตรี"> ดนตรี
+    <input type="checkbox" name="interest" value="อาหาร"> อาหาร
+    <input type="checkbox" name="interest" value="เทคโนโลยี"> เทคโนโลยี
+    <button onclick="SubmitInterrest()">แสดงสิ่งที่สนใจ</button> <!--- กดแล้วแสดงสิ่งที่สนใจ--->
+    <script>
+        /*แสดงสิ่งที่สนใจ*/
+        function SubmitInterrest(){
+            //เลือกcheckboxทั้งหมด
+            let interestDOM = document.querySelectorAll('input[name = interest]');
+            let contentHTML = '<ul>';
+            //เอาค่าแค่ตัวที่เลือก เอาค่าออกมาเฉพาะตัวที่เลือกใส่ใน array
+            for (let i=0; i < interestDOM.length; i++) {
+                if(interestDOM[i].checked){
+                    contentHTML += '<li>' + interestDOM[i].value + '</li>';
+                }
+            }
+            //วนค่าที่เลือกใส่ html กลับไป
+            contentHTML += '</ul>';
+            //console.log(contentHTML);
+            //ใส่ html ใน content
+            let contentDOM = document.getElementById('content');
+            contentDOM.innerHTML = contentHTML;
+
+        }
+        /*แสดงข้อความใน console*/
+        let helloDOM = document.getElementById('hello')
+            console.log(helloDOM.textContent); /*แสดงข้อความทั้งหมด*/
+            console.log(helloDOM.innerText); /*แสดงแค้ข้อความที่มองเห็น*/
+            console.log(helloDOM.innerHTML); /*แสดงข้อความhtml*/
+        /*ลูกเล่น mouse*/
+        function overitem(){
+            console.log('mouse over')/*เมาส์ชี้*/
+        }function upitem(){
+            console.log('mouse up')/*ปล่อยเมาส์เป็น up */
+        }function downitem(){
+            console.log('mouse down')/*กดลงเป็น down*/
+        }
+        function userClick(){ /*กดแล้วปล่อยแล้วเกิด event*/
+            console.log('Hello World');
+        }
+        /*ลูกเล่นเวลาพิมเมื่อกด หรือ เมื่อปล่อยจากแป้น*/
+        function changeFirstName(){
+            //เลือกไปยัง input firstname
+            let firstnameDoom = document.querySelector('input[name = firstname]')
+            // เอา value ของ first name ออกมา
+            console.log('change firstname',firstnameDoom.value);
+        }
+        /* เลือก radio คลิกแล้วเกิด event*/
+        function ChangeGender(){ /*เปลี่ยนเพศ*/
+            //เลือก gender ทุก input ทั้งหมดออกมา
+            let genderInputs = document.querySelectorAll('input[name = gender]');
+            let gender = '';
+            //ใครมี check อยู่ ให้เอา value = 
+            for (let i = 0; i < genderInputs.length; i++) {
+                if(genderInputs[i].checked){
+                    gender = genderInputs[i].value;
+                }
+            }
+            console.log('selected gender',gender);
+    }
+    </script>
+</body>
+</html>
