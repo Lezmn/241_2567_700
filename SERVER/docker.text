@@ -1,0 +1,19 @@
+docker rm = ลบ containerใน docker
+docker run -d -p 80:80 nginx // รันผ่าน port 80 ใน webbrowser
+docker ps --all //แสดงข้อมุลใน docker ว่ามี container อะไรบ้าง
+docker exec -it container-id bash // เข้าไปในเครื่อง container 
+ls // list files
+pwd // print working directory ดูว่าอยู่ตรงไหนของ linux
+cat // ดูข้อมูลในไฟล์
+cd ..// ย้อนกลับ
+docker system prune // ลบcontainer ที่หยุดทุกตัวทิ้ง 
+    WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - unused build cach
+
+docker-compose up -d //เป็นการรันตัว container พร้อมกัน หลายตัวผ่านสคริปของ docker-compose
+docker-compose down // เป็นการหยุด container ทุกตัวใน docker-compose
+
+npm nodemon node ชื่อไฟล์เซิฟที่จะรัน // รันเซิฟให้อัปเดตอยู่เรื่อยๆขณะที่ยังรันอยู่
