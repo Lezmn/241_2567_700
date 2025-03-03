@@ -100,7 +100,7 @@ else{
 let number = 25;
 
 if!(number % 2 == 0){
-    console.log('you r evenwp number');
+    console.log('you r even number');
 }
 */
 
