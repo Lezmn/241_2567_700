@@ -31,7 +31,7 @@ window.onload = async () => {
                 genderDOMs[i].checked = true;
             }
         }
-        
+         
         console.log('interest',user.interest);
         for (let i=0; i<interestDOM.length; i++){
             if (user.interest.includes(interestDOM[i].value)){

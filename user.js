@@ -13,17 +13,27 @@ const loadData = async() =>{
 
     console.log(response.data);
     const userDOM = document.getElementById('user');
-    let htmldata = '<div>'
+    let htmldata = `<table class = "center"> <div>
+    <tr>
+                <th>ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>`
 //2. นำ user ทั้งหมด โหลดกลับเข้าไปใน html
 for (let i = 0; i < response.data.length; i++) {
     let user = response.data[i];
-    htmldata += `<div>
-    ${user.id} ${user.firstname} ${user.lastname}
-    <a href ='index.html?id=${user.id}'><button>edit</button></a>
-    <button class = 'delete' data-id='${user.id}'>delete</button>
+    htmldata += ` <div> <tr>
+    <td>${user.id}</td>
+    <td>${user.firstname}</td> 
+    <td>${user.lastname}</td>
+    <td><a href ='edit.html?id=${user.id}' style="text-decoration:none;"><button class="edit">edit</button></a></td>
+    <td><button class = 'delete' data-id='${user.id}'>delete</button></td>
+    </tr>
     </div>`
 }
-htmldata += '</div>'
+htmldata += '</div> </table>'
 userDOM.innerHTML = htmldata
 
 //3.ลบ user ที่ต้องการ

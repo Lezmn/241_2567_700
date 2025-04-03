@@ -13,6 +13,7 @@
         }
         body{ /*tag*/
             font-family: 'Kanit', sans-serif;
+            
         }
       
         #register{ /*id*/
@@ -68,47 +69,48 @@
 </head>
 <body>
     <!--form-->
-    <div class="right">
+    <div class="relative">
         suriya
     </div>
-    <div class="left">
+    <div class="sticky">
         test
     </div>    
-
-    <div id="register">Register Form</div>
-    <span class="header-form">ชื่อ</span>
-    <input class="form" type = "text">
-    <span class="header-form">นามสกุล</span>
-    <input class="form" type = "text"> <br>
-    อายุ 
-    <input class="form" type = "number" min="0" max="100">
-        <div class="gender">
-            เพศ
-            <div>
-                <input name="gender" type ="radio">ชาย
-            </div>
-            <div>
-                <input name="gender" type ="radio">หญิง
-            </div>
-            <div>
-                <input name="gender" type ="radio">ไม่ระบุ
-            </div>
-    </div>
-    <div>
-        งานอดิเรก
+    <div class="container">   
+        <div id="register">Register Form</div>
+        <span class="header-form">ชื่อ</span>
+        <input class="form" type = "text">
+        <span class="header-form">นามสกุล</span>
+        <input class="form" type = "text"> <br>
+        อายุ 
+        <input class="form" type = "number" min="0" max="100">
+            <div class="gender">
+             เพศ
+                <div>
+                    <input name="gender" type ="radio">ชาย
+                </div>
+                <div>
+                    <input name="gender" type ="radio">หญิง
+                </div>
+                <div>
+                   <input name="gender" type ="radio">ไม่ระบุ
+             </div>
+     </div>
         <div>
-            <input name="hobby" type="checkbox">ฟังเพลง
+            งานอดิเรก
+            <div>
+                <input name="hobby" type="checkbox">ฟังเพลง
+            </div>
+            <div>
+               <input name="hobby" type="checkbox">ดูหนัง
+            </div>
         </div>
         <div>
-            <input name="hobby" type="checkbox">ดูหนัง
+           ที่อยู่ <textarea></textarea>
         </div>
-    </div>
-    <div>
-        ที่อยู่ <textarea></textarea>
-    </div>
-    <div>
-        <button>ส่งข้อมูล</button>
-        <input type="submit" value="ส่งข้อมูล">
+        <div>
+            <button>ส่งข้อมูล</button>
+            <input type="submit" value="ส่งข้อมูล">
+        </div>
     </div>
 </body>
 </html>

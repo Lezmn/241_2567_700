@@ -86,7 +86,7 @@ app.get('/users/:id', async (req, res) => {
     const results = await conn.query('SELECT * FROM users WHERE id = ?', id)
     if (results[0].length == 0) {
         throw {statusCode: 404, message: 'user not found'}
-    }
+    } 
     res.json(results[0][0])
   
   }catch(err){
